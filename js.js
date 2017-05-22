@@ -5,7 +5,7 @@
 document.addEventListener('click', getClassName);
 var out = '';
 function getClassName(event) {
-    console.log(event);
+    // console.log(event);
     if (event.target.className != ''){
         // console.log(event.toElement.className);
         out =  'Элемент с классом - '+ event.target.className;
@@ -25,6 +25,7 @@ function getClassName(event) {
 var poPupDiv = document.getElementById('popup');
 var checkbox = document.getElementById('checkbox-popup');
 var localStorageChecked = localStorage.getItem('checkbox');
+var overlay = document.getElementById('overlay');
 
 document.getElementById('checkbox-popup').onchange = function() {
     if (this.checked ){localStorage.setItem('checkbox', 'checked');}
@@ -33,17 +34,20 @@ document.getElementById('checkbox-popup').onchange = function() {
 
 document.getElementById('close_popup').onclick = function () {
     poPupDiv.style.display = 'none';
+    overlay.style.display = 'none';
 };
 
 function poPup() {
     if (localStorageChecked == 'checked-no' || localStorageChecked == undefined){
         checkbox.checked = false;
         poPupDiv.style.display = 'block';
+        overlay.style.display = 'block';
         console.log('true');
     }
     else if (localStorageChecked == 'checked' ){
         console.log('false');
         poPupDiv.style.display = 'none';
+        overlay.style.display = 'none';
     }
 }
 window.onload = setTimeout(poPup,1000);

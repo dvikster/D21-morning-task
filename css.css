@@ -1,7 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin-bottom: 10px;
+}
+.wrapper {
+    padding: 50px;
+}
 .div_bocks{
     width: 100px;
     height: 100px;
     background: orange;
+}
+#overlay{
+    height:100vh;
+    width:100vw;
+    background:rgba(0,0,0,0.5);
+    display: none;
+    position: absolute;
+    z-index: 10;
+
 }
 #popup {
     position: absolute;
@@ -15,6 +34,9 @@
     background: orange;
     text-align: center;
     padding: 20px;
+    -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
 }
 .close_button {
     position: absolute;
